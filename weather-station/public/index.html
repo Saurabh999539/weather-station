@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Station</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">☀</span>
+      Weather<span>Station</span>
+    </a>
+    <div class="connection">
+      <span class="status-dot"></span>
+      Weather Dashboard
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL WEATHER CENTER</p>
+      <h1>Weather, at a glance.</h1>
+      <p class="subtitle">Explore current conditions and forecasts for any city.</p>
+
+      <form id="weather-form" class="search-form">
+        <span class="search-icon">⌕</span>
+        <input id="city-input" type="text" placeholder="Enter a city, e.g. Pune" required>
+        <button type="submit" id="search-button">Search Weather</button>
+      </form>
+      <p id="message" class="message" role="status">Enter a city to see its weather.</p>
+    </section>
+
+    <section id="weather-section" class="weather-section hidden">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="location-name">City</h2>
+          <p id="weather-description" class="muted">Weather details</p>
+        </div>
+        <div id="weather-icon" class="weather-icon">🌤️</div>
+      </div>
+
+      <div class="weather-card">
+        <div class="temperature">
+          <span id="temperature">--</span><sup>°C</sup>
+          <p>Current temperature</p>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <span>Feels like</span>
+            <strong id="feels-like">--°C</strong>
+          </div>
+          <div class="metric">
+            <span>Humidity</span>
+            <strong id="humidity">--%</strong>
+          </div>
+          <div class="metric">
+            <span>Wind speed</span>
+            <strong id="wind-speed">-- km/h</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading forecast-heading">
+        <div>
+          <p class="eyebrow">COMING DAYS</p>
+          <h2>7-day forecast</h2>
+        </div>
+      </div>
+      <div id="forecast" class="forecast-grid"></div>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR SAVED SEARCHES</p>
+          <h2>Weather history</h2>
+          <p class="muted">Weather reports saved in your database.</p>
+        </div>
+        <button id="refresh-history" class="secondary-button" type="button">Refresh</button>
+      </div>
+      <div id="history-list" class="history-list">
+        <p class="muted">Loading saved reports...</p>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <p class="eyebrow">ABOUT THIS PROJECT</p>
+      <h2>A connected weather dashboard</h2>
+      <p class="muted">
+        This application uses live weather data, a Node.js backend,
+        and MongoDB Atlas to store weather reports.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Weather Station · Built with Node.js and MongoDB</p>
+    <p id="server-status">Checking server connection...</p>
+  </footer>
+</body>
+</html>
